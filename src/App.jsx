@@ -388,7 +388,7 @@ function App() {
             type="text"
             placeholder="Ingrese el texto aquí"
             className={`flex ${colors[theme].text300} ${colors[theme].placeholder}  
-            ${colors[theme].bg150} focus:${colors[theme].bg200} focus:bg-opacity-50 outline-none rounded-3xl w-full h-full text-4xl p-2 lg:text-5xl sm:text-start transition-colors duration-1500 Z-10`}
+            ${colors[theme].bg150} focus:${colors[theme].bg200} focus:bg-opacity-50 outline-none rounded-3xl w-full h-full text-4xl p-2 lg:text-5xl sm:text-start transition-colors duration-1500 Z-20`}
           />
         </motion.div>
         <motion.div
