@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'ralewey', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --lBlue100: #F6F6F6;
+  --lBlue200: #D6E4F0;
+  --lBlue300: #1E56A0;  
+  --lBlue400: #163172;
+  --lBlue500: #00204A;
+  --dBlue100: #D9FAFF;
+  --dBlue200: #00BBF0;
+  --dBlue300: #005792;
+  --dBlue400: #072B61;
+  --dBlue500: #00204A;
+  --gray100 : #CED4DA;
+  --gray200 : #ADB5BD;
+  --gray300 : #868E96;
+  --gray400 : #495057;
+  --gray500 : #343A40;
+  
+  
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: 'raleway';
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
