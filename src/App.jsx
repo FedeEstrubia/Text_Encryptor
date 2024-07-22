@@ -22,15 +22,16 @@ function App() {
 
   let lastEncryption = "";
 
-  /** COLORS FOR THE THEMES */
+  
 
-  // const [theme, setTheme] = useState(1);
+  
 
   localStorage.getItem("initialTheme") === null &&
     localStorage.setItem("initialTheme", 0);
-
   const [theme, setTheme] = useState(localStorage.getItem("initialTheme"));
 
+
+  /** COLORS FOR THE THEMES */
   const colors = [
     /**LIGHT BLUE */
     {
@@ -42,7 +43,9 @@ function App() {
       textHistory: "text-[#163172]",
       text300: "text-[#1E56A0]",
       textAscent: "text-[#1E56A0] text-2xl font-bold",
+      textAscentM: "text-[#1E56A0] text-[1.2rem] font-bold",
       textAscent2: "text-[#1E56A0] text-2xl font-regular",
+      textAscentM2: "text-[#1E56A0] text-[1.2rem] font-regular",
       border300: "border-[#1E56A0]",
       placeholder: "placeholder-[#1E56A0]",
       textAlerta: "text-[#495057]",
@@ -64,7 +67,9 @@ function App() {
       textHistory: "text-[#297A7F]",
       text300: "text-[#00BBF0]",
       textAscent: "text-[#00BBF0] text-2xl font-bold",
+      textAscentM: "text-[#00BBF0] text-[1.2rem] font-bold",
       textAscent2: "text-[#00BBF0] text-2xl font-regular",
+      textAscentM2: "text-[#00BBF0] text-[1.2rem] font-regular",
       border300: "border-[#00BBF0]",
       placeholder: "placeholder-[#00BBF0]",
       textAlerta: "text-[#ADB5BD]",
@@ -87,7 +92,9 @@ function App() {
       textHistory: "text-[#8E44AD]",
       text300: "text-[#8E44AD]",
       textAscent: "text-[#6C3483] text-2xl font-bold",
+      textAscentM: "text-[#6C3483] text-[1.2rem] font-bold",
       textAscent2: "text-[#6C3483] text-2xl font-regular",
+      textAscentM2: "text-[#6C3483] text-[1.2rem] font-regular",
 
       border300: "border-[#6C3483]",
       placeholder: "placeholder-[#8E44AD]",
@@ -111,7 +118,9 @@ function App() {
       textHistory: "text-[#C39BD3]",
       text300: "text-[#C39BD3]",
       textAscent: "text-[#D5A6BD] text-2xl font-bold",
+      textAscentM: "text-[#D5A6BD] text-[1.2rem] font-bold",
       textAscent2: "text-[#D5A6BD] text-2xl font-regular",
+      textAscentM2: "text-[#D5A6BD] text-[1.2rem] font-regular",
       border300: "border-[#8E44AD]",
       placeholder: "placeholder-[#8E44AD]",
       textAlerta: "text-[#D5A6BD]",
@@ -134,7 +143,9 @@ function App() {
       textHistory: "text-[#E67E22]",
       text300: "text-[#E67E22]",
       textAscent: "text-[#D35400] text-2xl font-bold",
+      textAscentM: "text-[#D35400] text-[1.2rem] font-bold",
       textAscent2: "text-[#D35400] text-2xl font-regular",
+      textAscentM2: "text-[#D35400] text-[1.2rem] font-regular",
       border300: "border-[#F39C12]",
       placeholder: "placeholder-[#E67E22]",
       textAlerta: "text-[#F39C12]",
@@ -302,7 +313,7 @@ function App() {
       {/** BUTTONS THEMES MOBILE */}
       <div className="sm:hidden absolute top-2 left-[18vw] flex gap-1">
         <motion.button
-          className={`${colors[0].bg200} ${colors[0].text300} p-[6px] text-sm`}
+          className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
           onClick={() => {
             setTheme(0), localStorage.setItem("initialTheme", 0);
           }}
@@ -313,7 +324,7 @@ function App() {
           LightB
         </motion.button>
         <motion.button
-          className={`${colors[1].bg200} ${colors[1].text300} p-[6px] text-sm`}
+          className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
           onClick={() => {
             setTheme(1), localStorage.setItem("initialTheme", 1);
           }}
@@ -324,7 +335,7 @@ function App() {
           DarkB
         </motion.button>
         <motion.button
-          className={`${colors[2].bg300} ${colors[2].text100} p-[6px] text-sm`}
+          className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
           onClick={() => {
             setTheme(2), localStorage.setItem("initialTheme", 2);
           }}
@@ -335,7 +346,7 @@ function App() {
           LightV
         </motion.button>
         <motion.button
-          className={`${colors[3].bg300} ${colors[3].text300} p-[6px] text-sm`}
+          className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
           onClick={() => {
             setTheme(3), localStorage.setItem("initialTheme", 3);
           }}
@@ -346,7 +357,7 @@ function App() {
           DarkV
         </motion.button>
         <motion.button
-          className={`${colors[4].bg200} ${colors[4].text300} p-[6px] text-sm`}
+          className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
           onClick={() => {
             setTheme(4), localStorage.setItem("initialTheme", 4);
           }}
@@ -457,7 +468,7 @@ function App() {
             type: "spring",
             delay: 0.5,
           }}
-          className={`flex flex-col relative justify-center items-center w-full h-[15vh] mt-12 sm:mt-4 lg:mt-[-5vh] lg:w-[30%] lg:h-[90vh] ${colors[theme].bg200} rounded-[32px] p-2 gap-4 transition-colors duration-500`}
+          className={`flex flex-col relative justify-center items-center w-full h-[15vh] mb-12 sm:mb-0 mt-12 sm:mt-4 lg:mt-[-5vh] lg:w-[30%] lg:h-[90vh] ${colors[theme].bg200} rounded-[32px] p-2 gap-4 transition-colors duration-500`}
         >
           <motion.h1
             initial={{ opacity: 0 }}
@@ -519,7 +530,7 @@ function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, ease: "easeInOut", type: "spring" }}
-          className={`flex flex-col justify-center items-center w-full h-[15vh] mt-12 sm:mt-4 sm:h-[15vh] lg:mt-[-5vh] lg:w-[30%] lg:overflow-hidden lg:h-[90vh] ${colors[theme].bg200} rounded-[32px] p-2 transition-colors duration-500 z-10`}
+          className={`flex flex-col justify-center items-center w-full h-[15vh] mb-12 sm:mb-0 mt-12 sm:mt-4 sm:h-[15vh] lg:mt-[-5vh] lg:w-[30%] lg:overflow-hidden lg:h-[90vh] ${colors[theme].bg200} rounded-[32px] p-2 transition-colors duration-500 z-10`}
         >
           <motion.p
             initial={{ opacity: 0, scale: 1, y: 0, x: 400 }}
@@ -530,10 +541,40 @@ function App() {
               x: 0,
               transition: { duration: 2, ease: "easeInOut", type: "spring" },
             }}
-            className={`${colors[theme].text300} break-words text-[1.2rem] lg:w-full lg:h-[10rem] font-regular sm:text-[1.4rem]`}
+            className={`${colors[theme].textHistory} hidden sm:block break-words sm:w-full sm:h-[10rem] font-regular sm:text-[1.4rem]`}
           >
-            ¡Genial! <br /> Ahora decidí si querés <br /> transformar tu mensaje{" "}
-            <br /> en un misterio o <br /> revelar su secreto.
+            <span className={`${colors[theme].textAscent}`}>¡Genial!</span>{" "}
+            <br /> Ahora decidí si querés <br />{" "}
+            <span className={`${colors[theme].textAscent2}`}>transformar</span>{" "}
+            tu <span className={`${colors[theme].textAscent2}`}>mensaje</span>{" "}
+            <br /> en un{" "}
+            <span className={`${colors[theme].textAscent}`}>misterio</span> o{" "}
+            <br />{" "}
+            <span className={`${colors[theme].textAscent2}`}>revelar</span> su{" "}
+            <span className={`${colors[theme].textAscent}`}>secreto</span>.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, scale: 1, y: 0, x: 400 }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              x: 0,
+              transition: { duration: 2, ease: "easeInOut", type: "spring" },
+            }}
+            className={`${colors[theme].textHistory} break-words sm:hidden text-[1.1rem] w-full font-regular`}
+          >
+            <span className={`${colors[theme].textAscentM}`}>¡Genial!</span>{" "}
+            Ahora{" "}
+            <span className={`${colors[theme].textAscentM2}`}>decidí</span>
+            <br /> si querés{" "}
+            <span className={`${colors[theme].textAscentM2}`}>
+              transformar
+            </span>{" "}
+            tu mensaje en un{" "}
+            <span className={`${colors[theme].textAscentM}`}>misterio</span> o{" "}
+            <span className={`${colors[theme].textAscentM2}`}>revelar</span> su{" "}
+            <span className={`${colors[theme].textAscentM}`}>secreto</span>.
           </motion.p>
           <motion.img
             initial={{ opacity: 0, x: 400 }}
@@ -555,9 +596,16 @@ function App() {
               x: 0,
               transition: { duration: 2, ease: "easeInOut", type: "spring" },
             }}
-            className={`${colors[theme].text300} break-words text-[1.2rem] lg:w-full lg:h-[10rem] font-regular sm:text-[1.4rem] transition-colors duration-500`}
+            className={`${colors[theme].textHistory} hidden sm:block break-words text-[0.9rem] lg:w-full lg:h-[10rem] font-regular sm:text-[1.4rem] transition-colors duration-500`}
           >
-            Soy un genio en esto, ¡vos solo decime qué hacer!
+            <span className={`${colors[theme].textAscent2}`}>Soy</span> un{" "}
+            <span className={`${colors[theme].textAscent}`}>Genio</span> en{" "}
+            <span className={`${colors[theme].textAscent2}`}>esto,</span> <br />{" "}
+            <span className={`${colors[theme].textAscent}`}>¡</span>{" "}
+            <span className={`${colors[theme].textAscent2}`}>Vos</span> solo{" "}
+            <span className={`${colors[theme].textAscent2}`}>decime</span> qué{" "}
+            <span className={`${colors[theme].textAscent2}`}>hacer</span>
+            <span className={`${colors[theme].textAscent}`}>!</span>
           </motion.p>
           {/* <motion.button
             onClick={() => navigator.clipboard.writeText(newText)}
@@ -577,13 +625,19 @@ function App() {
         </motion.div>
       ) : !textEncrypted && textDesencrypted ? (
         <div
-          className={`flex flex-col justify-between items-center w-full mt-12 sm:mt-4 sm:h-[25vh] lg:mt-[-5vh] lg:w-[30%] lg:overflow-hidden lg:h-[90vh] ${colors[theme].bg200} rounded-[32px] p-8 transition-colors duration-500 `}
+          className={`flex flex-col justify-between items-center w-full mt-12 mb-12 sm:mb-0 sm:mt-4 sm:h-[25vh] lg:mt-[-5vh] lg:w-[30%] lg:overflow-hidden lg:h-[90vh] ${colors[theme].bg200} rounded-[32px] p-8 transition-colors duration-500 `}
         >
           <p
-            className={`${colors[theme].text300} break-words w-full lg:block lg:mt-16 lg:w-full font-bold text-[1.2rem] sm:text-[1.5rem]`}
+            className={`${colors[theme].textHistory} break-words w-full lg:block lg:mt-16 lg:w-full text-[1.2rem] sm:text-[1.5rem]`}
           >
-            ¡Gran trabajo, aventurero! <br /> Este es el secreto que Lupín
-            reveló especialmente <br /> para vos
+            ¡Gran trabajo,{" "}
+            <span className={`${colors[theme].textAscent}`}>aventurero!</span>{" "}
+            <br /> Este es el{" "}
+            <span className={`${colors[theme].textAscent}`}>secreto</span> que{" "}
+            <span className={`${colors[theme].textAscent}`}>Lupín</span>{" "}
+            <span className={`${colors[theme].textAscent2}`}>reveló</span>{" "}
+            especialmente <br /> para{" "}
+            <span className={`${colors[theme].textAscent}`}>vos</span>
           </p>
           <motion.div
             initial={{ opacity: 0, scale: 0.6 }}
@@ -677,7 +731,7 @@ function App() {
         </div>
       ) : (
         <div
-          className={`flex flex-col justify-between items-center w-full mt-12 sm:mt-4 sm:h-[25vh] lg:mt-[-5vh] lg:w-[30%] lg:overflow-hidden lg:h-[90vh] ${colors[theme].bg200} rounded-[32px] p-8 duration-700`}
+          className={`flex flex-col justify-between items-center w-full mb-12 sm:mb-0 mt-12 sm:mt-4 sm:h-[25vh] lg:mt-[-5vh] lg:w-[30%] lg:overflow-hidden lg:h-[90vh] ${colors[theme].bg200} rounded-[32px] p-8 duration-700`}
         >
           <motion.p
             initial={{ opacity: 0 }}
@@ -685,18 +739,33 @@ function App() {
               opacity: 1,
               transition: { duration: 0.7, ease: "easeInOut" },
             }}
-            className={`${colors[theme].text300} break-words w-full lg:block lg:mt-16 lg:w-full font-regular text-[1.2rem] sm:text-[1.5rem]`}
+            className={`${colors[theme].textHistory} hidden sm:block break-words w-full lg:block lg:mt-16 lg:w-full font-regular text-[1.2rem] sm:text-[1.5rem]`}
           >
             ¡Gran trabajo,{" "}
-            <span className={`font-bold ${colors[theme].textAscent}`}>
-              Aventurero!
-            </span>{" "}
+            <span className={`${colors[theme].textAscent}`}>Aventurero!</span>{" "}
             <br /> Este es el{" "}
-            <span className={`font-bold ${colors[theme].textAscent}`}>
-              Enigma
-            </span>{" "}
-            que Lupín <br /> ha creado especialmente <br /> para{" "}
-            <span className={`font-bold ${colors[theme].textAscent}`}>Vos</span>
+            <span className={`${colors[theme].textAscent}`}>Enigma</span> que{" "}
+            <span className={`${colors[theme].textAscent2}`}>Lupín</span> <br />{" "}
+            ha <span className={`${colors[theme].textAscent2}`}>creado</span>{" "}
+            especialmente <br /> para{" "}
+            <span className={`${colors[theme].textAscent}`}>Vos</span>
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { duration: 0.7, ease: "easeInOut" },
+            }}
+            className={`${colors[theme].textHistory} sm:hidden break-words w-full  lg:mt-16 lg:w-full font-regular text-[1.2rem] sm:text-[1.5rem]`}
+          >
+            ¡Gran trabajo,{" "}
+            <span className={`${colors[theme].textAscent}`}>Aventurero!</span>{" "}
+            <br /> Este es el{" "}
+            <span className={`${colors[theme].textAscent}`}>Enigma</span> que{" "}
+            <span className={`${colors[theme].textAscent2}`}>Lupín</span>{" "}
+            ha <span className={`${colors[theme].textAscent2}`}>creado</span>{" "}
+            especialmente <br /> para{" "}
+            <span className={`${colors[theme].textAscent}`}>Vos</span>
           </motion.p>
           <motion.div
             initial={{ opacity: 0, scale: 0.6 }}
@@ -798,10 +867,10 @@ function App() {
             type: "spring",
             ease: "easeInOut",
           }}
-          className=" absolute bottom-0 left-0 flex justify-center w-screen border-[#00bbf090] z-30"
+          className=" fixed bottom-0 left-0 flex justify-center w-screen border-[#00bbf090] z-30"
         >
           <div
-            className={`flex justify-center items-center pt-2 pb-2 border-t-1 border-${colors[theme].c300} ${colors[theme].bg200} sm:rounded-t-full w-screen gap-1 z-20`}
+            className={`flex justify-center items-center pt-2 pb-2 border-t-1 border-${colors[theme].c300} ${colors[theme].bg200} rounded-t-full w-screen gap-1 z-20`}
           >
             <p
               className={`${colors[theme].textHistory} text-base font-regular`}
