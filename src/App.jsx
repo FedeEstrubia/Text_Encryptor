@@ -51,6 +51,7 @@ function App() {
       textAlerta: "text-[#495057]",
       textButtonEncriptar: "text-[#F6F6F6]",
       msg: "bg-[#DFEEFA]",
+      textArea: "focus:bg-[#D6E4F0]",
 
       c200: "[#D6E4F0]",
       c300: "[#1E56A0]",
@@ -75,6 +76,7 @@ function App() {
       textAlerta: "text-[#ADB5BD]",
       textButtonEncriptar: "text-[#072B61]",
       msg: "bg-[#10346A]",
+      textArea: "focus:bg-[#072B61]",
 
       c100: "[#D9FAFF]",
       c200: "[#005792]",
@@ -101,6 +103,7 @@ function App() {
       textAlerta: "text-[#495057]",
       textButtonEncriptar: "text-[#F7C8DF]",
       msg: "bg-[#CD95DD]",
+      textArea: "focus:bg-[#C39BD3]",
 
       c100: "[#D5A6BD]",
       c200: "[#C39BD3]",
@@ -126,6 +129,7 @@ function App() {
       textAlerta: "text-[#D5A6BD]",
       textButtonEncriptar: "text-[#F7C8DF]",
       msg: "bg-[#763D8C]",
+      textArea: "focus:bg-[#6C3483]",
 
       c100: "[#D5A6BD]",
       c200: "[#C39BD3]",
@@ -151,6 +155,7 @@ function App() {
       textAlerta: "text-[#F39C12]",
       textButtonEncriptar: "text-[#FEE8D8]",
       msg: "bg-[#FfCfC9]",
+      textArea: "focus:bg-[#F7C6C0]",
 
       c100: "[#FEE8D8]",
       c200: "[#F7C6C0]",
@@ -388,7 +393,7 @@ function App() {
             type="text"
             placeholder="Ingrese el texto aquí"
             className={`flex ${colors[theme].text300} ${colors[theme].placeholder}  
-            ${colors[theme].bg150} focus:${colors[theme].bg200} focus:bg-opacity-50 outline-none rounded-3xl w-full h-full text-4xl p-2 lg:text-5xl sm:text-start transition-colors duration-1500 Z-20`}
+            ${colors[theme].bg150} ${colors[theme].textArea} focus:bg-opacity-50 outline-none rounded-3xl w-full h-full text-4xl p-2 lg:text-5xl sm:text-start transition-colors duration-1500 Z-20`}
           />
         </motion.div>
         <motion.div
