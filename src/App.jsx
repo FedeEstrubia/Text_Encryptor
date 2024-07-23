@@ -22,14 +22,9 @@ function App() {
 
   let lastEncryption = "";
 
-  
-
-  
-
   localStorage.getItem("initialTheme") === null &&
-    localStorage.setItem("initialTheme", 0);
+    localStorage.setItem("initialTheme", 1);
   const [theme, setTheme] = useState(localStorage.getItem("initialTheme"));
-
 
   /** COLORS FOR THE THEMES */
   const colors = [
@@ -252,12 +247,12 @@ function App() {
 
   return (
     <div
-      className={`flex flex-col  items-center justify-end p-8 sm:p-10 w-screen min-h-screen ${colors[theme].bg100} lg:flex-row lg:gap-12 transition-colors duration-500`}
+      className={`flex flex-col  items-center justify-end p-8 sm:p-10 w-screen min-h-screen ${colors[theme].bg100} lg:flex-row lg:gap-12 transition-colors duration-500 min-w-[370px]`}
     >
       <LogoAlura />
 
       {/** BUTTONS THEMES DESKTOP */}
-      <div className="hidden sm:flex absolute top-2 left-[28vw] flex gap-3">
+      <div className="hidden lg:flex absolute top-2 left-[28vw] flex gap-3">
         <motion.button
           className={`${colors[theme].bg200} ${colors[theme].text300} hover:${colors[0].bg200} hover:${colors[0].text300} `}
           onClick={() => {
@@ -316,62 +311,64 @@ function App() {
       </div>
 
       {/** BUTTONS THEMES MOBILE */}
-      <div className="sm:hidden absolute top-2 left-[18vw] flex gap-1">
-        <motion.button
-          className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
-          onClick={() => {
-            setTheme(0), localStorage.setItem("initialTheme", 0);
-          }}
-          initial={{ y: -600 }}
-          animate={{ y: 0, transition: { duration: 3 }, ease: "easeInOut" }}
-          whileHover={{ scale: 0.95, transition: { duration: 0.1 } }}
-        >
-          LightB
-        </motion.button>
-        <motion.button
-          className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
-          onClick={() => {
-            setTheme(1), localStorage.setItem("initialTheme", 1);
-          }}
-          initial={{ y: -300 }}
-          animate={{ y: 0, transition: { duration: 3 }, ease: "easeInOut" }}
-          whileHover={{ scale: 0.95, transition: { duration: 0.1 } }}
-        >
-          DarkB
-        </motion.button>
-        <motion.button
-          className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
-          onClick={() => {
-            setTheme(2), localStorage.setItem("initialTheme", 2);
-          }}
-          initial={{ y: -200 }}
-          animate={{ y: 0, transition: { duration: 3 }, ease: "easeInOut" }}
-          whileHover={{ scale: 0.95, transition: { duration: 0.1 } }}
-        >
-          LightV
-        </motion.button>
-        <motion.button
-          className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
-          onClick={() => {
-            setTheme(3), localStorage.setItem("initialTheme", 3);
-          }}
-          initial={{ y: -300 }}
-          animate={{ y: 0, transition: { duration: 3 }, ease: "easeInOut" }}
-          whileHover={{ scale: 0.95, transition: { duration: 0.1 } }}
-        >
-          DarkV
-        </motion.button>
-        <motion.button
-          className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
-          onClick={() => {
-            setTheme(4), localStorage.setItem("initialTheme", 4);
-          }}
-          initial={{ y: -600 }}
-          animate={{ y: 0, transition: { duration: 3 }, ease: "easeInOut" }}
-          whileHover={{ scale: 0.95, transition: { duration: 0.1 } }}
-        >
-          LightO
-        </motion.button>
+      <div className="absolute flex justify-center w-full top-2 flex ">
+        <div className="lg:hidden flex justify-between sm:w-[40%]">
+          <motion.button
+            className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
+            onClick={() => {
+              setTheme(0), localStorage.setItem("initialTheme", 0);
+            }}
+            initial={{ y: -600 }}
+            animate={{ y: 0, transition: { duration: 3 }, ease: "easeInOut" }}
+            whileHover={{ scale: 0.95, transition: { duration: 0.1 } }}
+          >
+            LightB
+          </motion.button>
+          <motion.button
+            className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
+            onClick={() => {
+              setTheme(1), localStorage.setItem("initialTheme", 1);
+            }}
+            initial={{ y: -300 }}
+            animate={{ y: 0, transition: { duration: 3 }, ease: "easeInOut" }}
+            whileHover={{ scale: 0.95, transition: { duration: 0.1 } }}
+          >
+            DarkB
+          </motion.button>
+          <motion.button
+            className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
+            onClick={() => {
+              setTheme(2), localStorage.setItem("initialTheme", 2);
+            }}
+            initial={{ y: -200 }}
+            animate={{ y: 0, transition: { duration: 3 }, ease: "easeInOut" }}
+            whileHover={{ scale: 0.95, transition: { duration: 0.1 } }}
+          >
+            LightV
+          </motion.button>
+          <motion.button
+            className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
+            onClick={() => {
+              setTheme(3), localStorage.setItem("initialTheme", 3);
+            }}
+            initial={{ y: -300 }}
+            animate={{ y: 0, transition: { duration: 3 }, ease: "easeInOut" }}
+            whileHover={{ scale: 0.95, transition: { duration: 0.1 } }}
+          >
+            DarkV
+          </motion.button>
+          <motion.button
+            className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
+            onClick={() => {
+              setTheme(4), localStorage.setItem("initialTheme", 4);
+            }}
+            initial={{ y: -600 }}
+            animate={{ y: 0, transition: { duration: 3 }, ease: "easeInOut" }}
+            whileHover={{ scale: 0.95, transition: { duration: 0.1 } }}
+          >
+            LightO
+          </motion.button>
+        </div>
       </div>
 
       {/** TEXTAREA AND MORE */}
@@ -473,7 +470,7 @@ function App() {
             type: "spring",
             delay: 0.5,
           }}
-          className={`flex flex-col relative justify-center items-center w-full h-[15vh] mb-12 sm:mb-0 mt-12 sm:mt-4 lg:mt-[-5vh] lg:w-[30%] lg:h-[90vh] ${colors[theme].bg200} rounded-[32px] p-2 gap-4 transition-colors duration-500`}
+          className={`flex flex-col relative justify-center items-center w-full h-[15vh] mb-12 lg:mb-0 mt-12 sm:mt-4 lg:mt-[-5vh] lg:w-[30%] lg:h-[90vh] ${colors[theme].bg200} rounded-[32px] p-2 gap-4 transition-colors duration-500`}
         >
           <motion.h1
             initial={{ opacity: 0 }}
@@ -767,8 +764,8 @@ function App() {
             <span className={`${colors[theme].textAscent}`}>Aventurero!</span>{" "}
             <br /> Este es el{" "}
             <span className={`${colors[theme].textAscent}`}>Enigma</span> que{" "}
-            <span className={`${colors[theme].textAscent2}`}>Lupín</span>{" "}
-            ha <span className={`${colors[theme].textAscent2}`}>creado</span>{" "}
+            <span className={`${colors[theme].textAscent2}`}>Lupín</span> ha{" "}
+            <span className={`${colors[theme].textAscent2}`}>creado</span>{" "}
             especialmente <br /> para{" "}
             <span className={`${colors[theme].textAscent}`}>Vos</span>
           </motion.p>
@@ -872,7 +869,7 @@ function App() {
             type: "spring",
             ease: "easeInOut",
           }}
-          className=" fixed bottom-0 left-0 flex justify-center w-screen border-[#00bbf090] z-30"
+          className="flex fixed bottom-0 left-0  justify-center w-screen border-[#00bbf090] z-30"
         >
           <div
             className={`flex justify-center items-center pt-2 pb-2 border-t-1 border-${colors[theme].c300} ${colors[theme].bg200} rounded-t-full w-screen gap-1 z-20`}

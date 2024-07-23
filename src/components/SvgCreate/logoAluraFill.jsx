@@ -3,7 +3,7 @@ export default function App() {
   return (
     <div
       onClick={() => window.location.reload()}
-      className="div hover:cursor-pointer hover:scale-[1.07] transition-all duration-200"
+      className="div hover:cursor-pointer hover:scale-[1.07] transition-all duration-200 z-50"
     >
       <div className="hidden sm:block">
         <div className="divLg">
