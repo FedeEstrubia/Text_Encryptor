@@ -312,7 +312,7 @@ function App() {
 
       {/** BUTTONS THEMES MOBILE */}
       <div className="absolute flex justify-center w-full top-2 flex ">
-        <div className="lg:hidden flex justify-between sm:w-[40%]">
+        <div className="lg:hidden flex justify-between  ml-6 gap-1 sm:w-[40%]">
           <motion.button
             className={`${colors[theme].bg200} ${colors[theme].text300} p-[6px] text-sm`}
             onClick={() => {
