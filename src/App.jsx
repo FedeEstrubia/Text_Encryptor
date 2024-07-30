@@ -589,7 +589,7 @@ function App() {
             src="/munieco.svg"
             alt="Muñeco"
           />
-          <motion.p
+          <motion.h2
             initial={{ opacity: 0, scale: 1, y: 0, x: 400 }}
             animate={{
               opacity: 1,
@@ -608,7 +608,7 @@ function App() {
             <span className={`${colors[theme].textAscent2}`}>decime</span> qué{" "}
             <span className={`${colors[theme].textAscent2}`}>hacer</span>
             <span className={`${colors[theme].textAscent}`}>!</span>
-          </motion.p>
+          </motion.h2>
           {/* <motion.button
             onClick={() => navigator.clipboard.writeText(newText)}
             initial={{ scale: 0 }}
